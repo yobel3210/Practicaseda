@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # ## #############################################################
 #
-# Author: Mauricio Matamoros
+# Author: modified by Yobel Dolores
 #
 # ## #############################################################
 import sys
@@ -12,10 +12,7 @@ def foo():
 	sleep(1)
 
 def fact(n):
-	f = 1
-	for i in range(2, n+1):
-		f*= i
-	return f
+	return 1 if n <= 1 else n * fact(n-1)
 
 def main(argv):
 	start = perf_counter()
