@@ -5,18 +5,26 @@
 # Author: Mauricio Matamoros
 #
 # ## #############################################################
-
+import sys
 from time import perf_counter, sleep
 
 def foo():
 	sleep(1)
 
-def main():
+def fact(n):
+	f = 1
+	for i in range(2, n+1):
+		f*= i
+	return f
+
+def main(argv):
 	start = perf_counter()
-	foo()
+	n = int(argv[1])
+	fact(n)
+	#foo()
 	elapsed = perf_counter() - start
 	print("Foo took {:.2f}ms".format(elapsed*1000))
 
 
 if __name__ == '__main__':
-	main()
+	main(sys.argv)
