@@ -8,6 +8,7 @@
 #
 # ## #############################################################
 import sys
+from time import perf_counter, sleep
 
 def knight_tour(n, x, y):
 	'''
@@ -105,6 +106,10 @@ def main(argv):
 		print_board()
 	else:
 		print(f'Can\'t find a solution for a {n}×{n} board.')
+	start = perf_counter()
+	knight_tour(n, x, y)
+	elapsed = perf_counter() - start
+	print("Foo took {:.2f}ms".format(elapsed*1000))
 # end def
 
 
